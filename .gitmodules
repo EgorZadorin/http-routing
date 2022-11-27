@@ -1,7 +1,7 @@
-[submodule "cista"]
-	path = cista
-	url = https://github.com/felixguendling/cista.git
-
-[submodule "net"]
-	path = net
+[submodule "external_lib/net"]
+	path = external_lib/net
 	url = https://github.com/motis-project/net
+
+[submodule "external_lib/cista"]
+	path = external_lib/cista
+	url = https://github.com/felixguendling/cista.git

@@ -1,5 +1,5 @@
 #include <cista/serialization.h>
-#include <iostream>
+#include "net/stop_handler.h"
 
 int main() {
     namespace data = cista::raw;

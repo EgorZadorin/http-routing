@@ -3,8 +3,19 @@ project(http-routing)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_subdirectory(cista)
+add_subdirectory(external_lib/cista)
+add_subdirectory(external_lib/net)
+include_directories(external_lib/net/include)
+include_directories(external_lib/net/deps/boost)
 
-add_executable(http-routing main.cpp)
+include_directories(include)
+
+file(GLOB_RECURSE http-routing-files src/*.cc)
+add_executable(http-routing ${http-routing-files})
 
 target_link_libraries(http-routing cista)
+set_target_properties(
+        http-routing
+        PROPERTIES COMPILE_FLAGS
+        "-Wall -Wextra"
+)
