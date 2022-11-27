@@ -1,10 +1,16 @@
-name: Clang Tidy
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-on: [push]
+name: clang-tidy-review
+
+# You can be more specific, but it currently only works on pull requests
+on: [pull_request]
+
 jobs:
-  Explore-GitHub-Actions:
+  build:
     runs-on: ubuntu-latest
+
     steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-      - name: clang-tidy review
-        uses: ZedThree/clang-tidy-review@v0.10.1      
+    - uses: actions/checkout@v3
+
+    # Optionally generate compile_commands.json
+
+    - uses: ZedThree/clang-tidy-review@v0.10.0
+      id: review
