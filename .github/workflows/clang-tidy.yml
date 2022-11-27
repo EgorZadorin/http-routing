@@ -1,0 +1,10 @@
+name: Clang Tidy
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: [push]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - name: clang-tidy review
+        uses: ZedThree/clang-tidy-review@v0.10.1      
