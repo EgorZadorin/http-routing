@@ -5,5 +5,5 @@ using namespace server;
 
 int main() {
     server::http_server s = {.name = "server"};
-    s.http_register(method::GET);
+    s.http_register(method::GET) ;
 }
